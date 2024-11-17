@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # Define the route to homepage
 @app.route('/calculate')
-def calculate(arg1, arg2, op):
+def calculate():
 
     # Get the operand
     op = request.args.get('op', type=str)
@@ -17,13 +17,13 @@ def calculate(arg1, arg2, op):
 
     # Perform requested operation:
     if op == 'sum':
-        return arg1 + arg2
+        return str(arg1 + arg2)
     elif op == 'subtract':
-        return arg1 - arg2
+        return str(arg1 - arg2)
     elif op == 'multiply':
-        return arg1 * arg2
+        return str(arg1 * arg2)
     elif op == 'divide':
-        return arg1 / arg2
+        return str(arg1 / arg2)
 
     else:
         "Error: missing some data"
